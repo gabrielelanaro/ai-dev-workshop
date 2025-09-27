@@ -24,6 +24,19 @@ paginate: true
 Presenter notes:
 Welcome everyone to this session on AI assisted. Today we'll explore how to leverage AI to enhance your development workflow.
 -->
+
+Here is the new structure.
+
+First, an introduction where I say what I do. Then I present the outline: I will explain how the whole process works from my experience and what I've seen working, including how people can be proactive at various stages of development. At the end, I will demo the workflow.
+
+I'll start by going through the roots file. The roots file specifies the roots for the LEM and serves as the onboarding document for your agent. Think of your agent like a new team member you are onboarding. I'll show the root file and explain how to structure prompts and what to include.
+
+Next I'll explain the main workflow: Research, Plan, Act. First, ask the LEM to research—find information and fetch documentation via MCP if needed. Then ask it to plan; I typically prompt it to learn about a library and plan how to integrate it or how a refactoring should work. Finally, ask it to implement the plan.
+
+I'll also cover integrations and the environment setup. Web integrations can come before the Research–Plan–Act flow. Set up the environment for the agent to run in, let it interact with that environment, and include a feedback loop for tasks in the Plan–Act stage. Explain what MCPs are useful for and how they fit into the workflow.
+
+Finally, I'll do an end-to-end demo: create an issue, let the agent produce a PR, review the PR, and merge it. That will be the conclusion, organized into two main sections.
+
 # AI Assisted Coding
 
 <div class="columns">
@@ -64,8 +77,8 @@ Ask participants to share their current experiences with AI coding assistants.
 
 # Goals
 
-- **Learn** how to use AI tools to perform daily development tasks
-- **Customize** your workflows using rule files and commands
+- **Learn** how to prompt AI tools to perform daily development tasks
+- **Optimize** your workflows using rule files and commands
 - **Reflect** On which possibilities this opens for you in your day to day work
 
 ---
@@ -80,9 +93,8 @@ Encourage participants to ask questions throughout - consider using polls or int
 
 # Content Overview
 
-- Coding from the CLI
+- Setting up Memory Files
 - The Plan / Act Workflow
-- Rules and Memory
 - Commands
 - Building Complex Features
 - Where to go from here
@@ -96,12 +108,13 @@ Here we take a look at the main basic cloud features and their usage, and how yo
 Before we delve into an example.
 -->
 
-# Coding Tools
+# Setting up
 
-- How to get started with Claude Code and Codex
-- Modes & Permissions
-- Steering
-- Context Management
+- Improving agent outcomes by providing specific guidelines
+- Define project-specific patterns and recipes:
+  - "Follow the repository structure, business logic go into domain/ adapters into adapters/"
+  - "Use tdd, start from the test, watch it fail, iterate until fixed"
+- Demo: Try again the implementation this time with the rule files
 
 ---
 
@@ -115,27 +128,15 @@ TODO: maybe I can let it cook a simple frontend with it to demonstrate how one w
 # The Plan / Act Workflow
 
 * My main day-to-day workflow
-* Implementing in-memory version
+* Demo: Implementing in-memory version of a flight booking API
 
-```text
-flight-booking-mini
-```
-
-
+---
 <!-- 
 Presenter notes:
 CLAUDE.md help establish patterns for how AI should behave. This section covers practical examples.
 According to research, consistent code styles increase maintainability by 31%.
 -->
 
-# Rules and Memory
-
-- Define project-specific patterns and recipes:
-  - "Follow the repository structure, business logic go into domain/ adapters into adapters/"
-  - "Use tdd, start from the test, watch it fail, iterate until fixed"
-  - "Use conventional commits, to open PRs use the gh commandline"
-
----
 
 <!-- 
 Presenter notes:
@@ -145,27 +146,21 @@ Have a real PR example ready to demonstrate.
 
 # Commands
 
-Real-world PR automation with conventional commits:
-
-```text
-```
-
-
-<!-- 
-Presenter notes:
-Demonstrate how to use github issues. We create a command 
--->
-
-# Example: Github Issues
-
-Write, manage tickets using EARS requirements
-
+* Writing Tickets using EARS requirements
+* Preparing PRs
 
 ---
 
-# Building Complex Features
+# MCPs
 
-- spec-driven development
+- Fetch documentation snippets context7
+- Chrome Web Tools for browser
+
+---
+
+# Planning Complex Features
+
+- Spec Driven Development
 
 ---
 
@@ -174,22 +169,6 @@ Presenter notes:
 MCP (Model Context Protocol) allows integration with external tools like Jira. Show practical examples.
 Integration between tools can save up to 5 hours per week according to productivity research.
 -->
-
-# MCP and Integrations
-
-- get up-to-date documentation with context7
-
-
-<!-- 
-Presenter notes:
-
-example we can verify the thing looks good.
--->
-
-# Example: Browser Automation (Chrome Web Tools MCP)
-
-Feedback loop for frontend, use to check the swagger documentation
-
 
 <!--
 
