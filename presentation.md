@@ -33,16 +33,26 @@ Welcome everyone to this session on AI assisted. Today we'll explore how to leve
     How to have fun and ship fast with AI Agents
   </div>
   <div class="column">
-    <img src="image.png" alt="Cartoon of farmer teaching horse to drive a tractor" style="width: 100%; height: auto; max-height: 60vh; object-fit: contain; display: block; margin: 0 auto;">
+    <img src="image.png" alt="Cartoon of farmer teaching horse to drive a tractor">
   </div>
 </div>
+
 ---
 
 # About Me
 
-* Building, simulationg, evaluating and deploying AI Agents @Parloa
-* Chemist -> MLE -> MLOps -> SWE
-* Hooked on AI and its applications
+<div class="columns">
+  <div class="column">
+<ul>
+<li>Building, simulating, evaluating and deploying AI Agents @Parloa</li>
+<li>Chemist -> MLE -> MLOps -> SWE</li>
+<li>Hooked on AI in general and especially AI Driven Development</li>
+</ul>
+  </div>
+  <div class="column-centered">
+    <img src="1757103512240.jpeg" alt="Presenter Photo">
+  </div>
+</div>
 
 ---
 
@@ -62,17 +72,20 @@ Ask participants to share their current experiences with AI coding assistants.
 
 <!-- 
 Presenter notes:
-This session will run for approximately 1.5 hours. We'll cover theory and practice with numerous examples.
+This session will run for approximately 45 minutes
 Encourage participants to ask questions throughout - consider using polls or interactive elements at key points.
+
+
 -->
 
 # Content Overview
 
-- Intro to Claude Code
-- Research Plan Act
-- Rule files & commands
-- Automation
-- Model Context Protocol (MCP)
+- Coding from the CLI
+- The Plan / Act Workflow
+- Rules and Memory
+- Commands
+- Building Complex Features
+- Where to go from here
 
 ---
 
@@ -83,13 +96,12 @@ Here we take a look at the main basic cloud features and their usage, and how yo
 Before we delve into an example.
 -->
 
-# Claude Code Overview (Demo)
+# Coding Tools
 
-- Bootstrapping a project
-- Plan/Auto Accept
-- Status
-
-
+- How to get started with Claude Code and Codex
+- Modes & Permissions
+- Steering
+- Context Management
 
 ---
 
@@ -100,7 +112,10 @@ Demonstrates a simple backend implementation and usage of a feedback loop
 TODO: maybe I can let it cook a simple frontend with it to demonstrate how one would go about it.
 -->
 
-# The Plan / Act Workflow. Feature Development
+# The Plan / Act Workflow
+
+* My main day-to-day workflow
+* Implementing in-memory version
 
 ```text
 flight-booking-mini
@@ -165,8 +180,6 @@ Integration between tools can save up to 5 hours per week according to productiv
 - get up-to-date documentation with context7
 
 
-
-
 <!-- 
 Presenter notes:
 
@@ -177,6 +190,18 @@ example we can verify the thing looks good.
 
 Feedback loop for frontend, use to check the swagger documentation
 
+
+<!--
+
+
+[mcp_servers."chrome-devtools"]
+command = "npx"
+args = ["chrome-devtools-mcp@latest"]
+
+codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
+claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
+
+ -->
 ---
 
 # Where to go from here
