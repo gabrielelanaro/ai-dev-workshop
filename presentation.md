@@ -133,8 +133,24 @@ Have a real PR example ready to demonstrate.
 Real-world PR automation with conventional commits:
 
 ```text
-examples/rule_opening_pr/
 ```
+
+
+<!-- 
+Presenter notes:
+Demonstrate how to use github issues. We create a command 
+-->
+
+# Example: Github Issues
+
+Write, manage tickets using EARS requirements
+
+
+---
+
+# Building Complex Features
+
+- spec-driven development
 
 ---
 
@@ -150,18 +166,6 @@ Integration between tools can save up to 5 hours per week according to productiv
 
 
 
-<!-- 
-Presenter notes:
-Demonstrate how to use github issues. This bridges the gap between planning and coding.
-Have real Jira examples prepared to demonstrate.
--->
-
-# Example: Github Issues
-
-Write, manage tickets using EARS requirements
-
-
----
 
 <!-- 
 Presenter notes:
@@ -175,3 +179,7 @@ Feedback loop for frontend, use to check the swagger documentation
 
 ---
 
+# Where to go from here
+
+- Use Plan/Act, iterate a lot on the plan
+- Sub Agents
