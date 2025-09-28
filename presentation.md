@@ -20,35 +20,13 @@ paginate: true
   text-align: center;
 }
 </style>
-<!--
-Presenter notes:
-Welcome everyone to this session on AI assisted. Today we'll explore how to leverage AI to enhance your development workflow.
--->
 
-Here is the new structure.
+# Cooking Class: How to Work with AI
 
-First, an introduction where I say what I do. Then I present the outline: I will explain how the whole process works from my experience and what I've seen working, including how people can be proactive at various stages of development. At the end, I will demo the workflow.
+## My Experience with AI-Assisted Development
 
-I'll start by going through the roots file. The roots file specifies the roots for the LEM and serves as the onboarding document for your agent. Think of your agent like a new team member you are onboarding. I'll show the root file and explain how to structure prompts and what to include.
 
-Next I'll explain the main workflow: Research, Plan, Act. First, ask the LEM to research—find information and fetch documentation via MCP if needed. Then ask it to plan; I typically prompt it to learn about a library and plan how to integrate it or how a refactoring should work. Finally, ask it to implement the plan.
 
-I'll also cover integrations and the environment setup. Web integrations can come before the Research–Plan–Act flow. Set up the environment for the agent to run in, let it interact with that environment, and include a feedback loop for tasks in the Plan–Act stage. Explain what MCPs are useful for and how they fit into the workflow.
-
-Finally, I'll do an end-to-end demo: create an issue, let the agent produce a PR, review the PR, and merge it. That will be the conclusion, organized into two main sections.
-
-# AI Assisted Coding
-
-<div class="columns">
-  <div class="column-centered">
-    ~You're absolutely right!~
-    </br></br>
-    How to have fun and ship fast with AI Agents
-  </div>
-  <div class="column">
-    <img src="image.png" alt="Cartoon of farmer teaching horse to drive a tractor">
-  </div>
-</div>
 
 ---
 
@@ -57,7 +35,8 @@ Finally, I'll do an end-to-end demo: create an issue, let the agent produce a PR
 <div class="columns">
   <div class="column">
 <ul>
-<li>Building, simulating, evaluating and deploying AI Agents @Parloa</li>
+<li>Gabriele Lanaro, "Gabi"</li>
+<li>Staff Engineer, Agent Builder Tooling @Parloa</li>
 <li>Chemist -> MLE -> MLOps -> SWE</li>
 <li>Hooked on AI in general and especially AI Driven Development</li>
 </ul>
@@ -67,123 +46,150 @@ Finally, I'll do an end-to-end demo: create an issue, let the agent produce a PR
   </div>
 </div>
 
----
-
 <!-- 
-Presenter notes:
-Start by explaining the fundamental shift in how we approach coding with AI assistants.
-Ask participants to share their current experiences with AI coding assistants.
+Tell about what the company is about and how long you were there, introduce the story how you got hooked into AI Driven Development
 -->
 
-# Goals
+---
 
-- **Learn** how to prompt AI tools to perform daily development tasks
-- **Optimize** your workflows using rule files and commands
-- **Reflect** On which possibilities this opens for you in your day to day work
+# Real Results: Why AI Development Works
+
+## The Impact We Observed
+- 60% increase in developer productivity (one team measurement)
+- Adoption has grown steadily since March
+- Visible inner-sourcing effects across teams (reduced language barrier)
+
+**Takeaway:** Momentum is real—teams ship faster with less friction.
+**Bottom line:** It’s not black and white, but you can do things you couldn’t do before.
 
 ---
 
-<!-- 
-Presenter notes:
-This session will run for approximately 45 minutes
-Encourage participants to ask questions throughout - consider using polls or interactive elements at key points.
+# Today's Agenda
 
+## A basic AI-Driven development workflow
 
--->
-
-# Content Overview
-
-- Setting up Memory Files
-- The Plan / Act Workflow
-- Commands
-- Building Complex Features
-- Where to go from here
+**What I'll cover today:**
+- Picking your models
+- Basic Context Engineering
+- Workflows/Automation
 
 ---
 
-<!-- 
-Presenter notes:
-Here we take a look at the main basic cloud features and their usage, and how you bootstrap and plan them.
+# The Agent's Environment: A Developer-Setup Ecosystem
 
-Before we delve into an example.
--->
+**Key principle:** Let the agent act and self-verify in its environment
 
-# Setting up
+**Developer responsibilities:**
+- Set up the agent context
+- Establish feedback loops: make sure the agent can check its work
+- Decide on the requirements and constraints/guidelines
 
-- Improving agent outcomes by providing specific guidelines
-- Define project-specific patterns and recipes:
-  - "Follow the repository structure, business logic go into domain/ adapters into adapters/"
-  - "Use tdd, start from the test, watch it fail, iterate until fixed"
-- Demo: Try again the implementation this time with the rule files
+**Agent capabilities within this environment:**
+- Research and explore, provide options
+- Write code, run tests, self-correct
 
----
-
-<!-- 
-Presenter notes:
-Demonstrates a simple backend implementation and usage of a feedback loop
-
-TODO: maybe I can let it cook a simple frontend with it to demonstrate how one would go about it.
--->
-
-# The Plan / Act Workflow
-
-* My main day-to-day workflow
-* Demo: Implementing in-memory version of a flight booking API
-
----
-<!-- 
-Presenter notes:
-CLAUDE.md help establish patterns for how AI should behave. This section covers practical examples.
-According to research, consistent code styles increase maintainability by 31%.
--->
-
-
-<!-- 
-Presenter notes:
-Show how to set up claude to help with PR creation. This saves time on routine tasks.
-Have a real PR example ready to demonstrate.
--->
-
-# Commands
-
-* Writing Tickets using EARS requirements
-* Preparing PRs
+**Why this matters:** The agent will be much more successful as this is how it was trained.
 
 ---
 
-# MCPs
+# Picking Your Model
 
-- Fetch documentation snippets context7
-- Chrome Web Tools for browser
+## Anthropic
+* Claude Opus 4.1: Favorite among developers
+* Claude Sonnet 4: Great model
+
+## OpenAI
+* GPT-5-Codex: My Personal Pick
+
+## Notable Mentions
+* GLM-4.5 (z-ai): On par with sonnet for 3 euro/month
+* Grok Code Fast (x-ai): Fast model for execution
+
 
 ---
 
-# Planning Complex Features
+# Creating Rules Files (AGENTS.md)
 
-- Spec Driven Development
+**Key Principle:**: AGENTS.md is the main customization point for your workflows
+
+**What to include:**
+- Project structure and architecture patterns
+- Coding standards and best practices
+- Testing approaches and requirements
+- Any type of workaround
+
+**Metaphor**: Agent is a developer starting from scratch every new session
 
 ---
 
-<!-- 
-Presenter notes:
-MCP (Model Context Protocol) allows integration with external tools like Jira. Show practical examples.
-Integration between tools can save up to 5 hours per week according to productivity research.
--->
+# The Plan-Act Workflow
 
-<!--
+## Plan Phase
+- ALWAYS Ask the agent to plan the change
+- Guide the agent by asking to gather context
+- Limit the scope by being specific: "focus on the e2e tests only"
 
+## Act Phase
+- Implement the planned solution
+- Iterate based on feedback and testing results
 
-[mcp_servers."chrome-devtools"]
-command = "npx"
-args = ["chrome-devtools-mcp@latest"]
+**Tip**: Do not be afraid to start over
 
-codex mcp add chrome-devtools -- npx chrome-devtools-mcp@latest
-claude mcp add context7 -- npx -y @upstash/context7-mcp@latest
-
- -->
 ---
 
-# Where to go from here
+# PR Preparation
 
-- Use Plan/Act, iterate a lot on the plan
-- Sub Agents
+- automate your PR creation
+- use pre-commit hooks/pre-push hooks to establish feedback cycle
+- use commands to create issues and PRs, so you can have automation end 2 end
+
+---
+
+# Review Process
+
+- Set up coding review bots (Bugbot, codex)
+- CAREFULLY review the code, the agents will make very subtle mistakes
+- Leave comment in PRs, and address them using the agent
+
+---
+
+# Useful MCPs
+
+**Using MCP for documentation:**
+- **context7**: Fetch up-to-date library documentation and examples
+- **Integration tools**: Connect with external systems (Jira, GitHub, etc.)
+
+**Examples:**
+1. "Research NestJS validation patterns and best practices"
+2. "Fetch context7 documentation for @nestjs/common validation decorators"
+
+---
+
+# Key Takeaways
+
+**For your daily workflow:**
+- Use Plan/Act approach, iterate extensively on the plan
+- Create comprehensive AGENTS.md files for consistent agent behavior
+- Build feedback loops for the agent to self-check its work
+- Leverage MCP tools for documentation and integration
+
+---
+
+# Down the Rabbit Hole
+
+**Advanced techniques:**
+- Sub-agents for complex multi-step tasks
+- Background Agents in Slack
+- Spec Driven Development https://github.com/github/spec-kit
+- BMAD Method https://github.com/bmad-code-org/BMAD-METHOD
+
+---
+
+# Stay Updated
+
+**Questions?**
+Let's discuss your specific use cases and challenges!
+
+**Get more AI development insights:**
+- Newsletter: [teamkitchen.substack.com](https://teamkitchen.substack.com/)
+- Follow for updates on AI-assisted coding and agent development
